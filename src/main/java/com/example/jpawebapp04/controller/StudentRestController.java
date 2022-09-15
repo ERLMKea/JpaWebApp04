@@ -18,6 +18,12 @@ public class StudentRestController {
     @Autowired
     StudentRepository studentRepository;
 
+    @GetMapping("/")
+    public List<Student> studentsroot() {
+        List<Student> lst = studentRepository.findAll();
+        return lst;
+    }
+
     @GetMapping("/students")
     public List<Student> students() {
         List<Student> lst = studentRepository.findAll();
